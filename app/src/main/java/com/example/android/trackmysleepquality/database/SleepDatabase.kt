@@ -31,7 +31,13 @@ abstract class SleepDatabase: RoomDatabase() {
         private var INSTANCE: SleepDatabase? = null
 
         fun getInstance(context: Context): SleepDatabase {
+            //TODO: check necessity of double-checked locking
             synchronized(this) {
+                /*
+                Local variable is used to prevent multiple access to @Volatile
+                variable, which can seriously improve the method's overall
+                performance.
+                 */
                 var instance = INSTANCE
 
                 if (instance == null) {
