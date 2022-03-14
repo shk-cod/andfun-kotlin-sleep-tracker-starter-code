@@ -20,7 +20,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
-import com.example.android.trackmysleepquality.database.SleepNight
 import kotlinx.coroutines.*
 
 class SleepQualityViewModel(
@@ -29,7 +28,6 @@ class SleepQualityViewModel(
 ) : ViewModel() {
 
     private val viewModelJob = Job()
-
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private val _navigateToSleepTracker = MutableLiveData<Boolean?>()
