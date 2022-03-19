@@ -18,6 +18,9 @@ import java.lang.ClassCastException
 private const val ITEM_VIEW_TYPE_HEADER = 0
 private const val ITEM_VIEW_TYPE_ITEM = 1
 
+const val HEADER_SPAN_SIZE = 3
+const val ITEM_SPAN_SIZE = 1
+
 class SleepNightAdapter(private val clickListener: SleepNightListener): ListAdapter<DataItem, RecyclerView.ViewHolder>(
     SleepNightDiffCallback()
 ) {
